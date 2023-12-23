@@ -1,0 +1,32 @@
+<meta charset="UTF-8">
+<script>
+
+	function puloLinha(){
+		var puloLinha = '<br>';
+		document.write(puloLinha);
+	}
+
+	function mostra(frase){
+		document.write(frase);
+		puloLinha();
+	}
+
+	var contador = 1;
+	var totalIdades = 0;
+	var novaIdade = 0;
+	var mediaIdades = 0;
+
+	var quantidadeFamiliares = parseInt(prompt('Quantidade de familiares: '));
+
+	while(contador <= quantidadeFamiliares){
+		novaIdade = parseInt(prompt('Digite a idade '+contador+': '));
+		totalIdades += novaIdade;
+		contador++;
+	}
+
+	mediaIdades = totalIdades / quantidadeFamiliares;
+
+	mostra('A média de idades dos familiares é '+mediaIdades);
+
+	mostra('FIM');
+</script>

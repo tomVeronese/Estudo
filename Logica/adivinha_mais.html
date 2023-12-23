@@ -1,0 +1,70 @@
+<meta charset="UTF-8">
+
+<input type="" name="">
+<button>Adivinhe o número</button>
+
+<script>
+
+	function sorteia(){
+		return Math.round(Math.random() * 10);
+	}
+
+	function sorteiaNumeros(qtd){
+		var segredo = [];
+		var numero = 1;
+
+		while (numero <= qtd){
+			var numeroAleatorio = sorteia();
+
+			if(numeroAleatorio != 0){
+				var achou = false;
+
+				for (var i = segredo.length - 1; i >= 0; i--) {
+					if(segredo[i] == numeroAleatorio){
+						achou = true;
+						break;
+					}
+				}
+
+				if(achou == false){
+					segredo.push(numeroAleatorio);
+					numero++;
+				}
+			}
+		}
+
+		return segredo;
+	}
+
+	var segredos = sorteiaNumeros(5);
+
+	console.log(segredos);
+
+	var input = document.querySelector('input');
+	input.focus();
+	
+	function verifica(){
+
+		var achou = false;
+
+		for (var i = segredos.length - 1; i >= 0; i--) {
+			
+			if(input.value == segredos[i]){
+				alert('Você acertou!');
+				achou = true;
+				break;
+			} 
+		}
+
+		if(achou == false){
+			alert('Você errou!');
+		}
+
+		input.value = "";
+		input.focus();
+	}
+	
+	var botao = document.querySelector('button');
+	botao.onclick = verifica;
+
+</script>

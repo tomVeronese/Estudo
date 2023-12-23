@@ -1,0 +1,28 @@
+<meta charset="UTF-8">
+<script>
+
+	function puloLinha(){
+		var puloLinha = '<br>';
+		document.write(puloLinha);
+	}
+
+	function mostra(frase){
+		document.write(frase);
+		puloLinha();
+	}
+
+	var multiplicador = 1;
+
+	while (multiplicador <= 10){
+		mostra(multiplicador + ' * 7 = ' + 7 * multiplicador);
+		multiplicador += 1;
+	}
+	
+	puloLinha();
+
+	for (var mult = 1; mult <= 10; mult++) {
+		mostra(mult + ' * 8 = ' + 8 * mult);
+	}
+
+	mostra('FIM');
+</script>

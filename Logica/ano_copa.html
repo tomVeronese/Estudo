@@ -1,0 +1,25 @@
+<meta charset="UTF-8">
+<script>
+
+	function puloLinha(){
+		var puloLinha = '<br>';
+		document.write(puloLinha);
+	}
+
+	function mostra(frase){
+		document.write(frase);
+		puloLinha();
+	}
+
+	var limite = parseInt(prompt('Informe o ano limite: '));
+	var anoCopa = 1930;
+
+	while(anoCopa <= limite){
+
+		mostra("Teve copa em: " + anoCopa);
+		anoCopa += 4;
+
+	}
+
+	mostra('FIM');
+</script>
